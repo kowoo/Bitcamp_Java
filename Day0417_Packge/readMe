@@ -1,0 +1,11 @@
+java.lang
+>>자바를 실행하기 위한 기본적인 기능을 가진 클래스를 모아놓은 패키지
+특징 : 기본적인 패키지이기 때문에 import없이 사용가능함
+	ex) String, Math 등
+	//Wrapper Class : 기초자료형을 담을 수 있도록 만들어놓은 클래스
+	//Byte, Short, Integer, Long
+	//Float, Double, Character, Boolean
+
+import : 클래스에서 다른 패키지에 있는 클래스를 사용하고자 할 때,
+		import 패키지명.클래스; 를 해줘야 사용할 수 있다
+		ex) import java.util.Scanner;

@@ -1,0 +1,35 @@
+Animal 클래스
+protected name(문자열)
+protected numOfLegs(정수)
+sound() {동물이 웁니다.} 라고 출력하는 메서드 하나 작성
+
+Dog
+생성자 (기본 생성자 : name에 "멍멍이", numOfLegs = 4;, 2개를 매개변수로 받는 생성자도 만들자.)
+bark() 멍멍 출력
+
+Cat (기본 생성자 : name에 "야옹이", numOfLegs = 4;, 2개를 매개변수로 받는 생성자도 만들자.)
+meow() 야옹 출력
+
+
+메서드 오버로딩(중복메서드) vs 메서드 오버라이딩(메서드 재정의)
+메서드 오버로딩	: 이름만 같은 메서드를 여러개 정의
+			: 비슷한 기능을 가지는 메서드의 이름을 하나로 통일해서 사용하기 쉽게 하는 작업
+			: 매개변수를 달리해서 여러 동작을 하는 메서드의 이름을 통일한다.
+			ex) println(5) println("안녕), print(true) 이런것들?
+			
+메서드 오버라이딩	: 부모클래스에 정의된 메서드를 자식클래스에서 다시 작성하는것
+			: 부모클래스가 가지는 메서드와 똑같은 형태를 가지고 있어야 함
+			: 내용만 다시 작성
+			
+Shape(도형) 
+protected 
+area(실수),numOfLines(정수),name(문자열)
+생성자(기본생성자,멤버변수 입력받아서 초기화하는 생성자)
+getter/setter
+draw() 도형을 그립니다.출력 
+calArea() area = 0;
+toString(오버라이딩)
+
+-Circle,Rectangle,Triangle   Shape를 상속
+draw(),calArea(),toString() 오버라이딩
+			
