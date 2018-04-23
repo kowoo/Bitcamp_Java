@@ -1,3 +1,4 @@
+package thread1;
 
 public class MyThread extends Thread {
 	//Thread 클래스를 상속 받아서 run()을 재정의 한다.

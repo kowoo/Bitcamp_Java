@@ -1,3 +1,4 @@
+package thread1;
 
 public class HorseRace {
 	public static void main(String[] args) {

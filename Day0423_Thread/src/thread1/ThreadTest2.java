@@ -1,3 +1,4 @@
+package thread1;
 
 public class ThreadTest2 {
 	public static void main(String[] args) {
