@@ -12,7 +12,6 @@ public class PrintThread extends Thread {
 		this.targetThread = target;
 	}
 	
-	
 	public void run() {
 		//타겟쓰레드 실행 및 상태 모니터링
 

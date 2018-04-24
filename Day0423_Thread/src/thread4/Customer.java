@@ -6,6 +6,7 @@ public class Customer implements Runnable {
 	
 	public Customer(Buffer buffer) {
 		this.buffer = buffer;
+		
 	}
 	
 	public void run() {

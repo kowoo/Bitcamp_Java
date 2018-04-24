@@ -12,9 +12,5 @@ public class TargetThread extends Thread  {
 				e.printStackTrace();
 			}
 		}
-		for(long i=0; i<2000000000; i++) {
-
-		}
-
 	}
 }
