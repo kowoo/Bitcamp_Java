@@ -25,8 +25,7 @@ public class StudentList {
 	}
 
 	public void delete(String name) {
-		boolean isDeleted = false; 
-		//삭제할 학생을 찾아서, 복사를 하지 않았으면 true, 못찾았으면 false 
+		boolean isDeleted = false;
 		Student[] tmpArr = new Student[students.length-1];
 		int j=0;
 		for(int i=0;i<students.length;i++) {

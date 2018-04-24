@@ -12,6 +12,7 @@ public class SetTest {
 		set1.add("A");
 		set1.add("D");
 		set1.add("C");
+		set1.add("Z");
 		set1.add("B");
 		
 		//B는 중복되므로 false!, 만약 없던 수라면 넣고나서 true반환

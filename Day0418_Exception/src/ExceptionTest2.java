@@ -36,13 +36,6 @@ public class ExceptionTest2 {
 //				e.printStackTrace();
 //				System.out.println("예외가 발생했습니다");
 //			}
-//			catch(ArithmeticException e) {
-//				//이렇게 되면 예외가 발생한다.
-//				//왜냐하면 try-catch는 위에서 부터 내려오는데
-//				//위의 catch가 모든 예외를 다 잡아내버리므로 쓸모가 없음.
-//				e.printStackTrace();
-//				System.out.println("예외가 발생했습니다");
-//			}
 //		}
 		
 		for(int i=0; i<4; i++) {
@@ -55,11 +48,6 @@ public class ExceptionTest2 {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		//0으로 나누었을때는 result에 1을 넣고 싶음
-		//나머지는 그냥 나눈 값 출력
-
 		System.out.println("프로그램을 종료합니다.");
 		
 	}

@@ -1,9 +1,6 @@
 package linkedList;
 
 public class MyLinkedList {
-	//remove 다시하기
-	//remove(int index)
-	//set(int index,String data)
 	private int size;
 	private Node head;
 

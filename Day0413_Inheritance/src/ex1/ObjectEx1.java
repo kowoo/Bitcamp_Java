@@ -10,11 +10,11 @@ public class ObjectEx1 {
 		Student s = new Student();
 		
 		if(c2 instanceof Bus) {
-			//System.out.println("맞아요!");
+			System.out.println("맞아요!");
 			Bus bus = (Bus)c2;
 			bus.switchGate();
-		} else if(c1 instanceof SportsCar) {
-			//System.out.println("아니에요!");
+		} else if(c2 instanceof SportsCar) {
+			System.out.println("아니에요!");
 			SportsCar sc = (SportsCar)c1;
 			sc.turboOff();
 			sc.turboOn();

@@ -36,14 +36,11 @@ public class StudentList {
 	//			해당하는 이름의 학생 객체만 제외하고 기존 배열에서 복사
 	
 	public void delete(String name) {
-		boolean isDeleted = false; 
-		//삭제할 학생을 찾아서, 복사를 하지 않았으면 true, 못찾았으면 false 
 		Student[] tmpArr = new Student[students.length-1];
 		int j=0;
 		for(int i=0;i<students.length;i++) {
 			//학생 이름이랑, 입력받은 이름이랑 같으면
-			if(students[i].getName().equals(name)&&!isDeleted) {
-				isDeleted = true;
+			if(students[i].getName().equals(name)) {
 			}else {
 				tmpArr[j] = students[i];
 				j++;

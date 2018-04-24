@@ -12,7 +12,7 @@ public class MultiplierTest {
 		Multiplier m = new Multiplier(); // 객체를 생성하는 문장 (객체의 초기화), 생성자의 호출
 		
 		int multResult = m.multiply(3, 5);
-		m.multiply(2.5, 4.5);
+		double b = m.multiply(2.5, 4.5);
 		
 		//같은 기능을 하는 메서드인데 데이터 타입에 따라서 이름을 다르게 쓰는게 헷갈린다.
 		//다른데이터 타입을 동시에 사용할 수 있게 만들기 위해서 오버로딩을 한다.
@@ -25,5 +25,6 @@ public class MultiplierTest {
 		
 		System.out.println(multResult);
 		System.out.println(m.result);
+		System.out.println(b);
 	}
 }

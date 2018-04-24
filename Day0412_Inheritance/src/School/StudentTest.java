@@ -27,6 +27,7 @@ public class StudentTest {
 		//s1.studyKumon(4);   <<자식 클래스가 부모클래스의 참조변수에 참조되었음
 		
 		((MiddleStudent)s1).studyKumon(3);
+		System.out.println(hStudent);
 		//정수는 실수의 일부분
 		//double d = 2;
 		//실수는 정수인가?? 아니다

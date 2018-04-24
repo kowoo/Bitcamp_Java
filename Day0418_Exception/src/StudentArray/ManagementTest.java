@@ -10,11 +10,13 @@ public class ManagementTest {
 		//my.start();
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("숫자입력하세요");
+		System.out.println("숫자를 입력하세요");
 		int a = input.nextInt();
 		//input.nextLine();
-		System.out.println("문자열 입력하세요");
+		System.out.println("문자열을 입력하세요");
 		String str= input.next();
+		
+		//이거 왜 있는거지?...
 		
 		
 		

@@ -1,23 +1,24 @@
 import java.util.Scanner;
 
 public class StudentManagement2 {
+	//1과 다른점: 기본값으로 4명이 들어가 있음
 	Scanner sc = new Scanner(System.in);
-	private Student2[] students;
+	private Student[] students;
 	private boolean isRun;
 	private int count;
 
 	public StudentManagement2() {
-		students = new Student2[50];
+		students = new Student[50];
 		isRun = true;
 		count = 0;
 		setDefaultData();
 	}
 	
 	public void setDefaultData() {
-		students[0] = new Student2("홍길동", 3 , 100, 100, 90);
-		students[1] = new Student2("홍기동", 2 , 80, 100, 100);
-		students[2] = new Student2("홍길금", 1 , 100, 80, 100);
-		students[3] = new Student2("홍길은", 6 , 100, 100, 80);
+		students[0] = new Student("홍길동", 3 , 100, 100, 90);
+		students[1] = new Student("홍기동", 2 , 80, 100, 100);
+		students[2] = new Student("홍길금", 1 , 100, 80, 100);
+		students[3] = new Student("홍길은", 6 , 100, 100, 80);
 		count+=4;
 	}
 
@@ -63,7 +64,7 @@ public class StudentManagement2 {
 	public void sPlus() {
 //
 //		if(count == students.length) { //배열 확장인데 다음에 시도해보자...
-//			Student2[] tmpStudents = new Student2[count*2];
+//			Student[] tmpStudents = new Student[count*2];
 //			tmpStudents = students;
 //		}
 		System.out.println("이름을 입력해주세요.");
@@ -78,7 +79,7 @@ public class StudentManagement2 {
 		int math = sc.nextInt();
 		sc.nextLine();
 
-		students[count] = new Student2(name, grade, kor, eng, math);
+		students[count] = new Student(name, grade, kor, eng, math);
 		count++;
 	}
 

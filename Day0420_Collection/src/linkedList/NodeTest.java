@@ -22,5 +22,6 @@ public class NodeTest {
 		}
 		System.out.println(current);
 		
+		
 	}
 }

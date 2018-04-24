@@ -1,6 +1,6 @@
 package list2;
 
-import java.util.List;
+//import java.util.List;
 
 /*	ArrayList의 동작과 매우 비슷한 List만들기									
  * add(E): 파라미터로 전달받은 데이터를 array에 추가								v						

@@ -10,7 +10,7 @@ public class AnonymousTest {
 		
 		//익명클래스를 만드는 방법
 		Car myCar = new Car() {
-			boolean isTurbo;
+			boolean isTurbo; //없어도 되는데 왜 있는거지??
 			public void turboOn() {
 				System.out.println("터보 온!!");
 			}

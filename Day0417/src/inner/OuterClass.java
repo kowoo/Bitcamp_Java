@@ -17,12 +17,13 @@ public class OuterClass {
 	
 	//내부클래스
 	public static class InnerClass{
+		private String secret = "time is gold";
 		//내부클래스의 생성자
 		public InnerClass() {
 			System.out.println("내부클래스 생성자 호출");
 		}
 		public void showSecret() {
-//			System.out.println("비밀 : " + secret);
+			System.out.println("비밀 : " + secret);
 		}
 	}
 }

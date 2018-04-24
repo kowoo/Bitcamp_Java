@@ -1,6 +1,6 @@
-package list;
+package student;
 
-//import java.util.List;
+import java.util.List;
 
 /*	ArrayList의 동작과 매우 비슷한 List만들기									
  * add(E): 파라미터로 전달받은 데이터를 array에 추가								v						
@@ -10,10 +10,12 @@ package list;
  * set(int, E): 특정 인덱스에 데이터 넣기
  */
 
+@SuppressWarnings("unused")
 public class MyList<E> {
 	//데이터를 저장하기 위해서는 배열이 필요하다.
 	private E[] array;
 
+	@SuppressWarnings("unchecked")
 	public MyList() {
 		//크기 0인 배열 생성
 		//array = new E[0]; // 얘는 객체를 만들어내는 코드이기 때문에 타입이 정확하게 명시되어야 한다.
@@ -25,6 +27,7 @@ public class MyList<E> {
 		return array.length;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void add(E data) {
 		E[] tmp = (E[]) new Object[array.length+1];
 		for(int i=0; i<array.length; i++) {
@@ -34,6 +37,7 @@ public class MyList<E> {
 		array = tmp;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void remove(int index) {
 		E[] tmp = (E[]) new Object[array.length-1];
 		int n=0;
@@ -54,6 +58,7 @@ public class MyList<E> {
 		array[index] = e;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void set2(int index, E e) {
 		E[] tmp = (E[]) new Object[array.length+1];
 		for(int i=0; i<array.length; i++) {

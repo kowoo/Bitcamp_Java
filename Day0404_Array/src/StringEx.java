@@ -27,7 +27,7 @@ public class StringEx {
 		}
 		
 		//[H][e][l][l][o]  : a[0] 
-		String a = "   		He llo   ";
+		String a = " He llo ";
 		//문자열에서 0번 인덱스에 있는 char를 가져와서 char c에 대입
 		char c = a.charAt(0);
 		System.out.println(c);

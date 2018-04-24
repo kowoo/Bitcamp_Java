@@ -52,7 +52,3 @@ setTotal()할 때 홀수가 입력되면 OddNumberException 발생
 
 ScoreTest 만들고
 main에서 값 넣어보기
-
-
-
-

@@ -20,8 +20,7 @@ public class StoreTest {
 		//부모클래스의 참조변수에 참조된 객체가 어떤 객체인지
 		//정확히 모르기 때문에 예외 발생 가능성이 높으며, 형변환을 해줘야하는 불편함도 있다.
 		String str2 = (String)s2.getData();
-		
-		
+		System.out.println(str2);
 		
 		if(s1.getData() instanceof String) {
 			String str3 = (String)s1.getData();

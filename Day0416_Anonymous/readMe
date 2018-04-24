@@ -8,3 +8,14 @@ public class 이름{
 클래스의 이름이 필요없기 때문에 작성하지 않는다.
 왜? 객체를 한 번만 생성하고 싶을 때 쓰여서(일회용)
 이벤트를 처리할 때 사용 됨
+
+익명 클래스
+Student s = new Student() {
+	public class() {
+		String name = "익명";
+		int grade = 3;
+	}
+	public void tt() {
+		System.out.println("야자를 하다말고 도망칩니다!");
+	};
+}

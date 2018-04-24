@@ -170,6 +170,7 @@ public class StudentManagement {
 				System.out.println("학생이 없습니다.");
 				return;
 			}
+			System.out.println("삭제할 학생의 이름을 입력해주세요.");
 			String name = scan.next();
 			sList.delete(name);
 			System.out.println("삭제되었습니다.");
