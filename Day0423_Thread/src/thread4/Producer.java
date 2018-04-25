@@ -16,7 +16,7 @@ public class Producer implements Runnable {
 			buffer.put(data);
 			
 			try {
-			Thread.sleep((int)(Math.random()*100));
+				Thread.sleep((int)(Math.random()*100));
 			}catch(InterruptedException e) {
 				e.getStackTrace();
 			}

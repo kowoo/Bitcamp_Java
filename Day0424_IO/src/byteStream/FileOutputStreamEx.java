@@ -7,7 +7,7 @@ import java.io.IOException;
 public class FileOutputStreamEx {
 	public static void main(String[] args) {
 		//문장을 파일에 작성하기
-		String msg = "Hello!! FileOutputStream!!!";
+		String msg = "Hello!! FileOutputStream???!!!";
 		FileOutputStream fos = null;
 
 		//사용할 메서드는 write()

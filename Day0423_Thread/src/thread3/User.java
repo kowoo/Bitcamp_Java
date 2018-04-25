@@ -3,10 +3,10 @@ package thread3;
 public class User implements Runnable {
 	//통장에 돈을 입금했다가 출금했다가 하는 기능을 가짐
 	public void run() {
-		for(int i=0; i<50; i++) {
+		for(int i=0; i<20; i++) {
 			account.deposit(10000);
 			try {
-				Thread.sleep(100);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

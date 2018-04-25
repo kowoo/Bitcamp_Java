@@ -19,7 +19,7 @@ public class MapTest {
 		map.put(3,"Grape");
 		map.put(5,"Tomato");
 		map.put(7,"Pineapple");
-		//가져올 때는 key값으로 value를 가져올 수 있음
+		//가져올 때는 key를 이용해서 value를 가져올 수 있음
 		String val1 = map.get(5);
 		System.out.println(val1);
 		
@@ -29,7 +29,7 @@ public class MapTest {
 		System.out.println(val1);
 		System.out.println();
 		
-		//map도 set처럼 순서가 없음, 항상 key값으로 접근해야함
+		//map도 set처럼 순서가 없음, 항상 key로 접근해야함
 		//그렇다면 key를 모를때는? key가 있는지 없는지 검사
 		System.out.println(map.containsKey(15)); //해당 키가 있으면 true 없으면 false
 		System.out.println();
@@ -43,7 +43,7 @@ public class MapTest {
 		}
 		System.out.println();
 		
-		//Keyset을 얻어올 수 있다.
+		//keyset을 얻어올 수 있다.
 		Set<Integer> keySet = map.keySet();
 		for(int num: keySet) {
 			String str = map.get(num);

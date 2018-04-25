@@ -26,7 +26,6 @@ public class DataStreamEx {
 			in = new DataInputStream(
 					new BufferedInputStream(
 							new FileInputStream("data.dat")));		
-			
 			out.writeInt(100);
 			out.writeDouble(3.14);
 			out.writeBoolean(false);
@@ -42,8 +41,9 @@ public class DataStreamEx {
 			boolean bool = in.readBoolean();
 			String str = in.readUTF();
 			
-			System.out.println(intNum);
+			//화면에 출력할 때는 순서 상관없음~
 			System.out.println(doubleNum);
+			System.out.println(intNum);
 			System.out.println(bool);
 			System.out.println(str);
 			

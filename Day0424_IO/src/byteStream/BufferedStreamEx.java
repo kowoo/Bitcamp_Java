@@ -10,7 +10,7 @@ import java.io.IOException;
 public class BufferedStreamEx {
 	public static void main(String[] args) {
 		//데이터 처리 스트림 예제1
-		
+
 		//데이터 처리 스트림: 데이터 소스에서 값을 가져오거나 쓰는게 아니라
 		//				  데이터를 받아서 쓰기 편하게 만들어주는 역할!
 		//데이터 처리 스트림 중 Buffered(Input/Output)Stream
@@ -21,7 +21,7 @@ public class BufferedStreamEx {
 		//파일 input/output 스트림은 데이터 싱크 스트림
 		FileInputStream fis=null;
 		FileOutputStream fos=null;
-		
+
 		//BufferedInput/Output 스트림은 데이터 처리 스트림
 		BufferedInputStream bis=null;
 		BufferedOutputStream bos=null;
@@ -30,8 +30,9 @@ public class BufferedStreamEx {
 		
 		try {
 			fos = new FileOutputStream("number.txt");
+			//bs = new BufferOutputStream(fos);
 			//조금 더 효율적으로 사용하기 위해서 Buffered스트림을 이용하여 데이터를 보낸다.
-			bos = new BufferedOutputStream(new FileOutputStream("number.txt")); //데이터 싱크 스트림을 처리 스트림과 같이 쓰고 싶다면 이렇게, 하지만 이러면 두줄!
+			bos = new BufferedOutputStream(new FileOutputStream("number.txt")); //데이터 싱크 스트림을 처리 스트림과 같이 쓰고 싶다면 이렇게! 두줄로 표현할걸 한줄로 가능!
 			//버퍼의 크기 4096 byte
 			
 			for(int i=1; i<=300; i++) {

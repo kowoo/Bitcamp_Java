@@ -26,8 +26,9 @@ public class MapTest2 {
 		System.out.println("찾은 학생 이름: "+map.get("lee").getName());
 		System.out.println("찾은 학생 학년: "+map.get("lee").getGrade());
 		System.out.println("찾은 학생 평균: "+map.get("lee").getAverage()+"점");
+		//밑의 방법 말고 위의 방법으로 하자.
 		
-		//Key, Sey 가져오기
+		//keyset 가져오기
 		Set<String> keySet = map.keySet();
 		for(String key: keySet) {
 			Student student = map.get(key);

@@ -34,7 +34,6 @@ public class MapTest3 {
 		//이미 어떤 key값이 어떤 종류의 데이터를 사용하는지 약속이 되어있는 상태로
 		//데이터를 주고 받기 떄문에 해당하는 key가 가지는 데이터를 약속된 데이터로 사용한다.
 		
-		
 		//Map에 있는 데이터 꺼내와서 해당하는 데이터 변수에 넣기
 		//Map의 Value를 Object로 선언했기 때문에 가져올 때, 형 변환을 해야한다.
 		Student s = (Student)map.get("student");
