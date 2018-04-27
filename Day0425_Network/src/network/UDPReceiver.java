@@ -17,7 +17,7 @@ public class UDPReceiver {
 		//키보드로부터 입력을 받다가 'quit'를 입력받으면 종료
 		try {
 			//받는 부분은 포트를 미리 점유하고 있어야 한다. 그래야 데이터를 받을 수 있다.
-			DatagramSocket socket = new DatagramSocket(5050);
+			DatagramSocket socket = new DatagramSocket(5500);
 			byte[] buf=null;
 			DatagramPacket packet=null;
 			//5000번 포트로 들어오는 데이터를 계속 받으면 된다.

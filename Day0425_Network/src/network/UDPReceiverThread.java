@@ -6,8 +6,6 @@ import java.net.DatagramSocket;
 import java.net.SocketException;
 
 public class UDPReceiverThread implements Runnable {
-	Server server;
-	Thread sender = new Thread(new UDPSenderThread());
 	public void run() {
 		//키보드로부터 입력을 받다가 'quit'를 입력받으면 종료
 		try {
@@ -25,8 +23,6 @@ public class UDPReceiverThread implements Runnable {
 				socket.receive(packet);
 				//데이터를 받아왔으니 출력하자!
 				System.out.println(packet.getAddress()+" : "+ new String(buf).trim());
-				server.ip.add(packet.getAddress());
-				sender.run();
 			}
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
