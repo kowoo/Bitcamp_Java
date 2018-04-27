@@ -8,7 +8,6 @@ import java.util.List;
 
 public class TcpServer {
 	public static void main(String[] args) {
-		List<Socket> socketList = new ArrayList<Socket>();
 		//얘가 해야할일
 		//두 개의 클라이언트로 부터 각각 메시지를 받으면 다른 클라이언트로 전달
 		//연결 요청 수락  : ServerSocket	
