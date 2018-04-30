@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.Color;
 
 public class EventFrame extends JFrame {
+	//사용자의 특정한 행동을 이벤트라고 부른다.
+	//이벤트가 일어났을 때 결과를 내보내 주는 것을 이벤트처리라고 한다.
 	//이벤트 중 컴포넌트를 조작하는 행위: Action (버튼 클릭, 글자 입력, 목록 선택 같은 행위들)
 	//Action을 처리하는 인터페이스 ActionListener
 	JButton button;
@@ -52,11 +54,6 @@ public class EventFrame extends JFrame {
 			}
 		});
 		
-		
-		
-
-
-
 
 		this.setVisible(true);
 	}
