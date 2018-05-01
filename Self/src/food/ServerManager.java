@@ -1,4 +1,4 @@
-package guiChat;
+package food;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,6 +35,7 @@ public class ServerManager {
 	//쓰레드가 리스트를 계속 사용해야 하기 때문에 멤버클래스로 선언한다.
 	class ServerThread extends Thread {
 		//특정 소켓으로 부터 메시지를 받아서 리스트의 모든 소켓에 전달하는 녀석이다.
+		private String name;
 		private Socket socket;
 		public ServerThread(Socket socket) {
 			this.socket = socket;
@@ -44,10 +45,12 @@ public class ServerManager {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
 				//추가기능: 이름 입력받기
-//				BufferedWriter writer1 = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-//				writer1.write("이름을 입력하세요");
-//				writer1.newLine();
-//				writer1.flush();
+				BufferedWriter writer1 = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+				writer1.write("이름을 입력하세요");
+				writer1.newLine();
+				writer1.flush();
+				
+				String name = reader.readLine();
 
 				while(true) {
 					String msg = null;
@@ -61,7 +64,7 @@ public class ServerManager {
 
 						BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 
-						writer.write(msg);
+						writer.write(name+" : "+msg);
 						writer.newLine();
 						writer.flush();
 					}

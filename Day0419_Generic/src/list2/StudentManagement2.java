@@ -78,17 +78,18 @@ public class StudentManagement2 {
 	}
 
 	public void sSearch() {
+		Student tmp = new Student();
 		System.out.println("학생 이름을 입력해주세요.");
-		String one = sc.nextLine();
+		String name = sc.nextLine();
 		for(int i=0; i<sList.size(); i++) {
-			if(sList.get(i).getName().equals(one)) { // sList.get(i) = 학생 객체i, sList.get(i).getName() 학생 객체i의 이름
+			if(sList.get(i).getName().equals(name)) { // sList.get(i) = 학생 객체i, sList.get(i).getName() 학생 객체i의 이름
+				tmp=sList.get(i);
 				System.out.println(sList.get(i));
 			}
 		}
 		System.out.println();
 	}
 
-	//삭제기능 맛탱이 가버림.
 	public void sDelete() {
 		System.out.println("삭제할 학생의 이름을 입력해주세요.");
 		System.out.println("이름이 같은 경우 먼저 입력된 학생이 삭제됩니다.");

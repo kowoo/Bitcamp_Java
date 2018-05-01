@@ -7,8 +7,6 @@ public class ObjectEx1 {
 		Car c1 = new SportsCar();
 		Car c2 = new Bus();
 		
-		Student s = new Student();
-		
 		if(c2 instanceof Bus) {
 			System.out.println("맞아요!");
 			Bus bus = (Bus)c2;
