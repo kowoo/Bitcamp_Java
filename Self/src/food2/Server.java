@@ -1,4 +1,4 @@
-package food;
+package food2;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,10 +12,11 @@ public class Server {
 		
 		//소켓 연결을 받는 부분.
 		try {
-			serverSocket = new ServerSocket(5000);
+			serverSocket = new ServerSocket(8000);
 			while(true) {
 				System.out.println("요청 대기 중");
 				Socket socket = serverSocket.accept();
+				System.out.println("클라이언트에 연결 되었습니다.");
 				//서버 매니저에게 소켓을 넘겨줘야한다.
 				manager.add(socket);
 				

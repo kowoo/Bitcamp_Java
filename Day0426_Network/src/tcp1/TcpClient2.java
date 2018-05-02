@@ -30,7 +30,7 @@ public class TcpClient2 {
 			InputStream in = socket.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-			// 인&아웃풋 스트림은 바이트, 버퍼는라이터는 문자열 스트림이므로 바꿔줘야함!
+			// 인&아웃풋 스트림은 바이트, 버퍼라이터는 문자열 스트림이므로 바꿔줘야함!
 			OutputStream out = socket.getOutputStream();
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
 

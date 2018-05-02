@@ -26,3 +26,4 @@ DML (Data Manipulation Language)
 DCL (Data Control Language)
 데이터베이스에 대한 권한을 부여하는 명령어
 grant, revoke 등 
+

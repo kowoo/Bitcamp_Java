@@ -1,8 +1,12 @@
-package food;
+package food2;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,47 +25,53 @@ public class ServerManager {
 	}
 
 	class ServerThread extends Thread {
-		//private String name;
+		private String name;
 		private Socket socket;
 		public ServerThread(Socket socket) {
 			this.socket = socket;
-		}
+		}		
 		public void run() {
 			ObjectInputStream in = null;
 			ObjectOutputStream out = null;
 			try {
 				in = new ObjectInputStream(socket.getInputStream());
 				out = new ObjectOutputStream(socket.getOutputStream());
+
 				while(true) {
-					String btn = null;
-					String action = null;
+					String msg = null;
+					String outMsg = null;
 
+					//문자열을 읽어왔으니 리스트가 가지고 있는 모든 소켓에 전달하면 된다.
 					Protocol p = (Protocol)in.readObject();
-
-					//읽어온 객체가 어드민이 보낸 것이면 어드민이 가지는 기능을 실행.
-					//게스트면 게스트의 기능만 실행
-
+					
+					//읽어온 메시지가 닉네임 변경이면 닉변.
+					//전송이면 이전과 같이 동작(모든 소켓에 메시지 전달).
+					
+					//문자열 0~3번까지 읽어옴
+					//String type = msg.substring(0, 3); 
+					
+					//근데 그냥 토크나이저 쓰자. 왜냐하면 위의 섭스트링은 글자를 없애주질 못해서 ##01같은걸 다시 지우고 해야함.
 					String type = p.getType();
-
+					
 					Map<String, Object> data = p.getData();
-					action = (String)data.get("btn");
-
-					if(type.equals("#show")) {
-						//#show면 조회
-						action = (String)data.get("#show");
-						out.writeObject(p);
-						out.flush();
-					} else if(type.equals("#commentAdd")) {
-						//#commentAdd면 덧글달기
+					outMsg = (String)data.get("msg");
+					
+					if(type.equals("#01")) {
+						outMsg = (String)data.get("nick");
+						nick = outMsg;
+						
+					} else if(type.equals("#02")) {
 						for(Socket s: socketList) {
 							if(s==socket) {
 								continue;
 							}
-							out.writeObject(action);
+							out.writeObject(nick+": "+outMsg);
 							out.flush();
 						}
 					}
+									
 				}
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

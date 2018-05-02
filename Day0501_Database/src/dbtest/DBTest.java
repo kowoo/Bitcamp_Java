@@ -36,10 +36,10 @@ public class DBTest {
 			System.out.println("드라이버 로딩 성공!");
 
 			//Connection 객체는 DriverManager를 통해서 얻어올 수 있다.
-			connection = DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection(url, user, password); //커넥션을 이용해서 데이터를 주고 받는다. 소켓과 같은 개념
 			System.out.println("SQL 연결 성공!");
 			
-			//SQL 전송은 연결을 통해서 전송할거고 구문객체는 연결을 통해서 가져온다
+			//SQL 전송은 연결을 통해서 전송하고 구문객체는 연결을 통해서 가져온다
 			stmt = connection.createStatement();
 			String sql = "insert into student_ex values (6,'홍길동',3)";
 			
