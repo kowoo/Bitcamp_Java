@@ -17,13 +17,8 @@ public class ServerThread implements Runnable {
 	}
 
 	public void run() {
-		//두 개의 클라이언트로부터 메시지를 받으면 다른 클라이언트에게 전달하는 역할.
-		//메시지 송수신을 위한 소켓 2개 필요함!
-		//클라이언트로 부터 들어오는 메시지를 다른 메시지로 전달하는 작업이 필요함.
-
 		BufferedReader reader;
 		BufferedWriter writer;
-
 
 		try {
 			reader = new BufferedReader(new InputStreamReader(socket1.getInputStream()));

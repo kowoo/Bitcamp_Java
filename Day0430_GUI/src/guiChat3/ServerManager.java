@@ -51,7 +51,7 @@ public class ServerManager {
 					String msg = null;
 					String outMsg = null;
 
-					//문자열을 읽어왔으니 리스트가 가지고 있는 모든 소켓에 전달하면 된다.
+		
 					Protocol p = (Protocol)in.readObject();
 					
 					//읽어온 메시지가 닉네임 변경이면 닉변.

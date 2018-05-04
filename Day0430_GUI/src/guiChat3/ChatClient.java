@@ -35,12 +35,10 @@ public class ChatClient extends JFrame implements KeyListener{
 	private JButton btnNickName;
 	private JTextField tfNick;
 
-
 	/******채팅을 구성하는 멤버 변수******/
 	private Socket socket; //서버로 메시지 전송을 위한 소켓
 	private ObjectOutputStream out;
 	private String nick = "이름없음";
-
 
 	public ChatClient() {
 		this.setTitle("채팅");
@@ -173,7 +171,6 @@ public class ChatClient extends JFrame implements KeyListener{
 			socket = new Socket(ip, 8000);
 			//소켓 얻어왔으니 데이터 전송을 위해서 스트림 얻어오기
 			
-			//서버로 부터 오는 메시지를 받음
 			out = new ObjectOutputStream(socket.getOutputStream());
 			Thread receiver = new Thread(new Receiver(socket));
 			receiver.start();
@@ -222,7 +219,6 @@ public class ChatClient extends JFrame implements KeyListener{
 		}
 		
 		public void run() {
-			//키보드로부터 입력을 받아서 소켓에 메시지 전달
 			BufferedReader reader = null;
 			String msg = null;
 			

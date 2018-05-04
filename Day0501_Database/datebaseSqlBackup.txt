@@ -82,7 +82,7 @@ ex)insert into student_ex
  select [칼럼명],[칼럼명],[칼럼명]
    from [테이블명];
  ------------------
-  where [조건]  특정 Row를 조회하고자 할 때 사용 
+  where [조건] 특정 Row를 조회하고자 할 때 사용 
  
  ex) select snum,sname,sgrade
        from student_ex;

@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import studentDao.Student;
-
 public class StudentDao {
 	//속성값: 연결해야 되니까 url, user, password 필요함
 	private static final String URL="jdbc:oracle:thin:@localhost:1521:XE";

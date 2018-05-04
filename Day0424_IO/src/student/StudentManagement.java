@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
-
 public class StudentManagement {
 	//Management 클래스에 학생정보를 저장하고 가져오는 기능을 추가.
 	private static final String FILE_NAME = "sList.dat";
@@ -122,7 +121,6 @@ public class StudentManagement {
 		}
 		System.out.println();
 	}
-
 	public void sPlus() {
 		System.out.println("이름을 입력하세요");
 		String name = sc.next();
@@ -141,7 +139,6 @@ public class StudentManagement {
 		//만든 학생 객체를 StudentList의 객체에 넣어서 보관
 		sList.add(s);
 	}
-
 	public void sSearch() {
 		sc = new Scanner(System.in);
 		System.out.println("학생 이름을 입력해주세요.");
@@ -174,5 +171,5 @@ public class StudentManagement {
 			}
 		}
 	}
-
 }
+
