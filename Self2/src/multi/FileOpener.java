@@ -10,7 +10,7 @@ public class FileOpener {
 	private ObjectOutputStream ObOut;
 	
 	public FileOpener() {
-		fileIn = new FileInputStream(file);
+		//fileIn = new FileInputStream(file);
 	}
 	
 }

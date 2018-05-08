@@ -3,22 +3,24 @@ package prototype2;
 import java.io.Serializable;
 
 public class Store implements Serializable{
+	private int num;
 	private String name;
-	private String type;
-	private String teleNumber;
-	private String openClosed;
-	private String price;
-	private String score;
+	private int price;
+	private int score;
 	
 	public Store() {}
-	public Store(String name, String type, String teleNumber, String openClosed, String price, String score) {
+	public Store(int num, String name, int price, int score) {
 		super();
+		this.num = num;
 		this.name = name;
-		this.type = type;
-		this.teleNumber = teleNumber;
-		this.openClosed = openClosed;
 		this.price = price;
 		this.score = score;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
 	}
 	public String getName() {
 		return name;
@@ -26,41 +28,22 @@ public class Store implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getTeleNumber() {
-		return teleNumber;
-	}
-	public void setTeleNumber(String teleNumber) {
-		this.teleNumber = teleNumber;
-	}
-	public String getOpenClosed() {
-		return openClosed;
-	}
-	public void setOpenClosed(String openClosed) {
-		this.openClosed = openClosed;
-	}
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getScore() {
+	public int getScore() {
 		return score;
 	}
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 	
 	@Override
 	public String toString() {
-		return "Eatery [name=" + name + ", type=" + type + ", teleNumber=" + teleNumber + ", openClosed=" + openClosed
-				+ ", price=" + price + ", score=" + score + "]";
+		return name;
 	}
 	
 }
