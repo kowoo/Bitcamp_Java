@@ -133,4 +133,5 @@ public class StudentMainFrame extends JFrame{
 		sList = new Vector<Student>(studentList);
 		
 	}
+	
 }

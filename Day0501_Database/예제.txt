@@ -1,0 +1,94 @@
+1. 모든 사원의 급여에 300을 더한 후 ,이름, 급여, 인상된 급여 조회
+select ename,sal,sal+300
+from emp;
+
+2. 사원 번호가 7782인 사원의 이름과 부서번호 조회
+select ename,deptno
+from emp
+where empno=7782;
+
+3. 부서 번호가 20이거나 30인 사원의 이름과 부서번호 조회
+select ename,deptno
+from emp
+where deptno in(20,30);
+
+4. 급여가 2000이상 3000이하 이고, 부서가 20 또는 30인 사원의 이름, 급여, 부서번호
+select ename,sal,deptno
+from  emp
+where sal>=2000 and sal<=3000 and deptno in(20, 30);
+
+select ename,sal,deptno
+from  emp
+where sal between 2000 and 3000 and deptno in(20, 30);
+
+5. 커미션이 null 이 아닌 사원의 이름, 급여, 업무, 커미션 조회
+select ename,sal,job,comm
+from emp
+where comm!=0;
+
+select ename,sal,job,comm
+from emp
+where comm is not null;
+
+6. 업무가 CLERK 또는 SALESMAN 이면서 급여가 1600,950,1300이 아닌 사원의 이름,업무, 급여 조회
+select ename,job,sal
+from emp
+where job in('CLERK','SALESMAN')
+and sal!=1600 and sal!=950 and sal!=1300;
+
+select ename,job,sal
+from emp
+where job in('CLERK','SALESMAN')
+and sal not in(1600,950,1300);
+
+7. 커미션이 500 이상인 사원의 이름과 급여, 커미션 출력
+select ename,sal,comm
+from emp
+where comm>=500;
+
+8. 모든 사원의 이름, 업무, 급여(급여+커미션)을 조회, 단 커미션이 null인 경우 0으로
+select ename,job,sal,sal+nvl(comm,0)
+from emp;
+
+9. 
+9-1 전체 사원 급여의 최대값, 최소값, 평균값 조회
+select Max(sal),Min(sal),avg(sal)
+from emp;
+
+9-2 부서별 급여의 최대값, 최소값, 평균값 조회 
+select deptno "부서번호",Max(sal) "최고급여",Min(sal) "최저급여",avg(sal) "평균급여"
+from emp
+group by deptno;
+   
+10. 전체 사원의 수, 커미션의 총합, 커미션의 평균값 조회
+    단, 커미션이 없을경우 0으로 계산, 소수점은 둘쨰자리에서 반올림하여 첫째자리로 표시
+select count(sal),sum(comm),round(avg(nvl(comm,0)),1)
+from emp;
+    
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

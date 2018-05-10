@@ -148,7 +148,7 @@ ex) 업무가 SALESMAN 또는 MANAGER인 직원의 이름과 업무 조회
 null 비교: is null, is not null
 ex) MGR(매니저)이 null인 직원의 모든 정보 조회
  select *
- from emp
+  from emp
  where mgr is null;
 ex2) comm이 null이 아닌 직원의 이름, 직책, 급여를 조회
  select ename,job,sal
@@ -158,42 +158,44 @@ ex2) comm이 null이 아닌 직원의 이름, 직책, 급여를 조회
 between A and B: 특정범위를 조건으로 줄 때 사용
 ex) 급여가 1500이상 3000이하인 직원의 이름, 부서번호, 업무, 급여 조회
  select ename,deptno,job,sal
- from emp
- where sal between 1500 and 3000;
+   from emp
+  where sal between 1500 and 3000;
 -------------------------------------------
 order by: 조회 정렬 기준 설정
 ex) 모든 직원의 모든 정보를 sal 기준으로 오름차순 정렬 조회 (내림차순은 desc)
  select *						select *
- from emp				내림차순	from emp
- order by sal;					order by sal desc;
+   from emp				내림차순	  from emp
+  order by sal;					 order by sal desc;
 -------------------------------------------
 1. 부서번호가 10이고 업무가 CLERK인 직원의 이름, 업무, 부서 번호 조회
  select ename,job,deptno
- from emp
- where deptno=10 and job like 'CLERK'; (job like대신 job = 해도 됨)
+   from emp
+  where deptno=10 and job like 'CLERK'; (job like대신 job = 해도 됨)
 2. 입사일이 81년인 모든 직원 조회
  select *
- from emp
- where hiredate like '81%';
+   from emp
+  where hiredate like '81%';
 3. 매니저의 직원번호가 7698인 직원의 이름, 부서, 업무 조회
  select ename,deptno,job
- from emp
- where mgr like '7698';
+   from emp
+  where mgr like '7698';
 4. 업무가 SALESMAN인 직원 중, 급여가 1500이상인 직원의 모든 정보 조회
  select *
- from emp
- where job like 'SALESMAN' and sal>=1500;
+   from emp
+  where job like 'SALESMAN' and sal>=1500;
 5. 부서번호가 10인 직원 중, 업무가 CLERK인 직원과 업무가 SALESMAN인 직원의 이름, 부서번호, 업무, 급여, 커미션을 조회
  select ename,deptno,job,sal,comm
- from emp
- where deptno='10' and job in('CLERK','SALESMAN');
+   from emp
+  where deptno='10' and job in('CLERK','SALESMAN');
 6. 부서번호가 10인 직원의 이름, 업무, 급여, 커미션 조회. 단, 입사일 빠른 순으로 정렬
  select ename,job,sal,comm
- from emp
- where deptno like '10'
- order by hiredate;
+   from emp
+  where deptno like '10'
+  order by hiredate;
 7. 업무가 SALESMAN인 직원의 이름, 급여, 커미션 조회. 단, 커미션 기준 내림차순 정렬
  select ename,sal,comm
- from emp
- where job like 'SALESMAN'
- order by comm desc;
+   from emp
+  where job like 'SALESMAN'
+  order by comm desc;
+  
+ 
