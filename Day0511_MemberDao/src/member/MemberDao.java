@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDao {
-	Connection connection;
+	private Connection connection;
 
 	public void insertMember(Member member) {
 		String sql = "insert into member (num,id,pw,name,email) values (?,?,?,?,?)";
@@ -28,13 +28,14 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(connection!=null) connection.close();
 				if(pstmt!=null) pstmt.close();
+				if(connection!=null) connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		System.out.println(member+ " 추가 완료.");
 	}
 
 	public void updateMember(Member member) {
@@ -61,13 +62,14 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(connection!=null) connection.close();
 				if(pstmt!=null) pstmt.close();
+				if(connection!=null) connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		System.out.println(member+ " 수정 완료.");
 	}
 
 	public void deleteMember(int num) {
@@ -82,13 +84,14 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(connection!=null) connection.close();
 				if(pstmt!=null) pstmt.close();
+				if(connection!=null) connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		System.out.println(num+ "번 삭제 완료.");
 	}
 
 	public Member selectOne(int num) {
@@ -115,8 +118,8 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(connection!=null) connection.close();
 				if(pstmt!=null) pstmt.close();
+				if(connection!=null) connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -126,7 +129,7 @@ public class MemberDao {
 	}
 
 	public List<Member> selectAll() {
-		String sql = "select * from member";
+		String sql = "select * from member order by num";
 		List<Member> memberList = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -151,8 +154,8 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(connection!=null) connection.close();
 				if(pstmt!=null) pstmt.close();
+				if(connection!=null) connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -6,16 +6,16 @@ public class DaoTest {
 	public static void main(String[] args) {
 		MemberDao dao = new MemberDao();
 		Member member = new Member();
-		member.setNum(3);
-		member.setId("google");
+		member.setNum(5);
+		member.setId("nate");
 		member.setPw("com");
-		member.setName("구글");
-		member.setEmail("@gmail.com");
-		member.setRegdate("1991-12-02");
-		System.out.println("멤버 제작 성공");
+		member.setName("네이트");
+		member.setEmail("@nate.com");
+		member.setRegdate("2018-03-27");
+//		System.out.println("멤버 제작 성공");
 		
-		dao.updateMember(member);
-		//dao.insertMember(member);
+		dao.insertMember(member);
+		//dao.updateMember(member);
 		//dao.deleteMember(3);
 		
 //		Member tmp = new Member();
