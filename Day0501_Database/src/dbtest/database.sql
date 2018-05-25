@@ -8,7 +8,7 @@ SQL(Structed Query Language)
  
  유저권한
  모든권한주기
- GRANT connect,dba,resource to zkfkzktm;
+ GRANT connect,dba,resource to kwh;
 
  ALTER user 아이디 identified "비밀번호";
  

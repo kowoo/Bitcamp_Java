@@ -1,6 +1,8 @@
 package lastChat;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
 	private String id;
 	private String pw;
 	private String nick;
@@ -8,6 +10,7 @@ public class Member {
 	public Member(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
+		this.nick = "이름없음";
 	}
 	public Member(String id, String pw, String nick) {
 		this.id = id;

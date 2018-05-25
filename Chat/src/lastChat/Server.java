@@ -5,6 +5,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,12 +17,15 @@ public class Server {
 	
 	public Server() {
 		try {
+			socketList = new ArrayList<Socket>();
 			ssocket = new ServerSocket(8000);
 			
 			while(true) {
+				System.out.println("여기는 ㄱㅊ");
 				Socket socket = ssocket.accept();
+				System.out.println("여기가 널?");
 				socketList.add(socket);
-				new ServerThread(socket);
+				new ServerThread(socket).start();
 				
 			}
 		} catch (IOException e) {
@@ -46,30 +50,43 @@ public class Server {
 		
 					Protocol p = (Protocol)in.readObject();
 					String type = p.getType();
+					System.out.println("로그인 데이터 보낸거 받음");
 					
 					Map<String, Object> data = p.getData();
 					outMsg = (String)data.get("msg");
 					
 					if(type.equals("#001")) {
-						//001##이면 로그인
+						System.out.println("로그인 정보확인");
 						Member mem = (Member)data.get("login");
-						Member check = dao.selectOne(mem.getId());
 						
-						if(mem.getId() == check.getId()) {
-							System.out.println("아이디 있음!");
+						if(dao.selectOne(mem.getId())==null) {
+							if(type.equals("#001")) {
+								System.out.println("없는 아이디");
+								p.setType("#003");
+								out.writeObject(p);
+							}
+						if(type.equals("#000")) {
+								//#000이면 가입
+								Member mem2 = (Member)data.get("login");
+								mem2.setNick("이름없음");
+								dao.insert(mem2);
+								System.out.println("가입완료");
+							}
+						//null이 아니라면
+						} else {
+							Member check = dao.selectOne(mem.getId());
 							if(mem.getPw() == check.getPw()) {
 								System.out.println("비번 일치!");
-								//로그인을 실행시키기 위한 프토로콜을 보냄
+								p.setType("#001");
+								out.writeObject(p);
 							} else {
 								System.out.println("비번 불일치");
-								//로그인 실패 창 로딩을 위한 프토로콜을 보냄
+								p.setType("#002");
+								out.writeObject(p);
 							}
-						} else {
-							System.out.println("아이디 없음!");
-							//로그인 실패 창 로딩을 위한 프토로콜을 보냄
 						}
-						
 					} 
+
 //					else if(type.equals("#02")) {
 //						//02##이면 채팅~
 //						for(Socket s: socketList) {
@@ -89,8 +106,14 @@ public class Server {
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (NullPointerException e) {
+				e.printStackTrace();
 			}
 
 		}
+	}
+	
+	public static void main(String[] args) {
+		Server server = new Server();
 	}
 }
