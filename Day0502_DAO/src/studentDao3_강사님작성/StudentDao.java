@@ -160,7 +160,6 @@ public class StudentDao {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				
 				Student student = new Student();
 				student.setSnum(rs.getInt("snum"));
 				student.setSname(rs.getString("sname"));

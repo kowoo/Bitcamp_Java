@@ -83,7 +83,7 @@ select table_name,constraint_name,constraint_type
 
 2. 테이블 생성후 (테이블 수정)
 			테이블명
-alter table student add constraint primary key(name);
+alter table student add primary key(name);
 alter table student modify name varchar2(20) not null;
 alter table student add not null(email);
 
